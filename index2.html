@@ -1,0 +1,446 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Web Layout</title>
+
+    <style>
+        /* Container */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        /* Article */
+        article {
+            padding: 20px;
+            width: 70%;
+            background-color: khaki;
+            min-height: 300px;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 30%;
+            background: black;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: khaki;
+        }
+
+        .sidebar ul li a:hover {
+            background: white;
+            color: black;
+        }
+
+        /* Top Navigation */
+        ul.nav {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+        }
+
+        ul.nav li {
+            position: relative;
+        }
+
+        ul.nav li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.nav li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: blue;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            color: white;
+        }
+
+        .dropdown-content a:hover {
+            background-color: skyblue;
+            color: black;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Header */
+        header {
+            background-color: khaki;
+            padding: 5px;
+            text-align: center;
+            font-size: 35px;
+            color: black;
+        }
+
+        /* Footer */
+        footer {
+            background-color: blue;
+            padding: 5px;
+            text-align: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h2>MATATAG Curriculum - TLE </h2>
+    <h3 style="font-size:18px;">TECHNOLOGY AND LIVELIHOOD EDUCATION</h3>
+</header>
+
+<!-- TOP NAVIGATION -->
+<ul class="nav">
+    <li><a href="#" onclick="loadContent('home')">Home</a></li>
+
+    <li class="dropdown">
+        <a href="#">Activities</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('activity1')">Activity 1</a>
+            <a href="#" onclick="loadContent('activity2')">Activity 2</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">Assessment</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('assessment1')">Assessment 1</a>
+            <a href="#" onclick="loadContent('assessment2')">Assessment 2</a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">References</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('reference1')">
+                <strong>Reference</strong>
+            </a>
+        </div>
+    </li>
+
+    <li class="dropdown">
+        <a href="#">About</a>
+        <div class="dropdown-content">
+            <a href="#" onclick="loadContent('about')">Group Members</a>
+        </div>
+    </li>
+</ul>
+
+<section>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <nav class="sidebar">
+            <ul>
+                <li><a href="#" onclick="loadContent('content')">Content</a></li>
+                <li><a href="#" onclick="loadContent('performance')">Performance Standard</a></li>
+                <li><a href="#" onclick="loadContent('standard')">Content Standard</a></li>
+                <li><a href="#" onclick="loadContent('competencies')">Learning Competencies</a></li>
+                <li><a href="#" onclick="loadContent('objectives')">Objectives</a></li>
+            </ul>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <article id="content">
+            <h2></h2>
+            <p>
+                
+
+            <!-- ✅ NEW PRESENTABLE PARAGRAPH ADDED -->
+            <h2 style="font-size:24px;"><strong>BATANG SANTO LIKAS NA MATALINO,MABAIT, AT AKTIBO!</strong></h2>
+            <p>
+                GRADE 10 PULAG
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2025 SDIHS</p>
+</footer>
+
+<script>
+function loadContent(section) {
+
+    const content = document.getElementById("content");
+
+    if (section === "home") {
+        content.innerHTML = `
+            <h2>Mission</h2>
+            <p>The mission of ICT is to deliver reliable, secure, and innovative technological solutions.</p>
+
+            <h2>Vision</h2>
+            <p>To create a digitally connected and empowered learning environment.</p>
+
+            <h2>Core Values</h2>
+            <p>
+                MAKA-Diyos<br>
+                MAKA-Tao<br>
+                MAKA-Kalikasan<br>
+                MAKA-Bansa
+            </p>
+        `;
+    }
+
+    else if (section === "about") {
+        content.innerHTML = `
+            <h2>Group Members</h2>
+            <ul>
+                <li><a href="https://www.facebook.com/share/1APz4pyHAX/" target="_blank">Akira Afable</a></li>
+                <li><a href="https://www.facebook.com/share/1ahFdSTqUM/" target="_blank">Andrei Cabungcal</a></li>
+                <li><a href="https://www.facebook.com/share/17thKMFbB8/" target="_blank">Jiro Marco Sabian</a></li>
+                <li><a href="https://www.facebook.com/share/18DXZKtLhm/" target="_blank">Angelo Del Rosario</a></li>
+                <li><a href="https://www.facebook.com/share/14aqde89Dku/" target="_blank">James Ryan Cervantes</a></li>
+            </ul>
+        `;
+    }
+
+    else if (section === "content") {
+        content.innerHTML = `
+            <h2>Content</h2>
+            <p>The curriculum covers <strong>Food Selection, Preparation, and Cooking</strong>, focusing on helping learners choose safe, nutritious, and high-quality food. It teaches identifying fresh ingredients, reading food labels, and practicing proper food safety and sanitation. Learners also learn essential preparation techniques—washing, cutting, measuring, and handling food—to prevent contamination.</p>
+
+            <p>The principles of cooking are emphasized, including how heat affects food texture, flavor, appearance, and nutrient content. Different cooking methods and <strong>Kitchen Math</strong>—using English and metric measurements and converting units—help learners cook accurately.</p>
+
+            <p>The <strong>Industrial Arts</strong> component introduces learners to technical and vocational services, including construction (woodwork, metalwork, masonry, painting, plumbing, tile setting), electrical and electronics work, refrigeration and air-conditioning, and automotive and small engine servicing. It also covers career and business opportunities, teaching learners about proper work practices and relevant codes and standards, such as the National Building Code, Philippine Electrical Code, Philippine Electronics Code, and traffic/road signs, promoting safety, quality, and legal compliance.</p>
+        `;
+    }
+
+    else if (section === "performance") {
+        content.innerHTML = `
+            <h2>Performance Standard</h2>
+            <p>Learners demonstrate understanding and application of food preparation and Industrial Arts concepts while observing proper hygiene, safety, and relevant codes and standards. They show practical skills in real-life situations and are able to make informed decisions in culinary and technical tasks, preparing them for future careers and responsible work practices.</p>
+        `;
+    }
+
+    else if (section === "standard") {
+        content.innerHTML = `
+            <h2>Content Standard</h2>
+            <p>The <strong>Content Standard in Food Education</strong> defines what learners should know, understand, and value about food, nutrition, and culinary practices. It emphasizes proper nutrition, food safety and sanitation, menu planning, preparation techniques, and responsible use of kitchen tools. Learners understand how food affects health, growth, mental performance, and disease prevention, while valuing hygiene and safety to prevent foodborne illnesses.</p>
+
+            <p>The standard also promotes appreciation of cultural and local food traditions, encouraging respect for diverse dishes and cooking methods while fostering creativity. It prepares learners for practical life skills and careers in culinary arts, food service, and hospitality, developing discipline, teamwork, and responsibility. Overall, it aims to create knowledgeable, skillful, and health-conscious individuals who can cook safely, eat nutritiously, and appreciate food culture.</p>
+        `;
+    }
+
+    else if (section === "objectives") {
+        content.innerHTML = `
+            <h2>Objectives</h2>
+            <p>The curriculum aims to guide teaching and learning in <strong>Technology and Livelihood Education (TLE)</strong> by outlining content standards, learning competencies, and performance standards. Its objectives are to develop students’ knowledge of food preparation and industrial arts, enhance practical skills with proper procedures and safety, teach principles like food selection and measurement conversions, and prepare learners for real-life applications, careers, and business opportunities. Overall, it equips students with essential life skills, technical knowledge, and responsible work habits.</p>
+        `;
+    }
+
+    else if (section === "competencies") {
+        content.innerHTML = `
+            <h2>Learning Competencies</h2>
+            <p>These are essential knowledge, skills, and values needed for real-world situations, including safe food preparation, technical skills in Industrial Arts, proper use of tools, and adherence to safety and quality standards.</p>
+        `;
+    }
+
+    else if (section === "activity1") {
+        content.innerHTML = `
+            <h2>🛠️ ACTIVITY 1</h2>
+            <h3>Code & Standard Matching</h3>
+
+            <p><strong>Objective:</strong> Identify the correct Philippine code or standard.</p>
+            <p><strong>Directions:</strong> Match Column A with Column B.</p>
+
+            <h4>Column A</h4>
+            <p>
+                A. Building a residential house<br>
+                B. Installing house electrical wiring<br>
+                C. Repairing electronic appliances<br>
+                D. Following safety signs on the road
+            </p>
+
+            <h4>Column B</h4>
+            <p>
+                1. National Building Code of the Philippines (RA 6541)<br>
+                2. Philippine Electrical Code<br>
+                3. Philippine Electronics Code<br>
+                4. Traffic and Road Signs
+            </p>
+
+            <h4>Answer Key</h4>
+            <p>A–1 | B–2 | C–3 | D–4</p>
+        `;
+    }
+
+    else if (section === "activity2") {
+        content.innerHTML = `
+            <h2>🍳 ACTIVITY 2</h2>
+            <h3>Cook & Convert</h3>
+
+            <p><strong>Objective:</strong> Apply principles of food preparation and convert measurements.</p>
+
+            <h4>Situation</h4>
+            <p>You are preparing a simple meal at home.</p>
+
+            <h4>Questions</h4>
+            <p>
+                1. Name one safety practice before cooking.<br>
+                2. Which ingredient should be checked first for freshness?<br>
+                3. Convert 1 cup of water to milliliters.<br>
+                4. Convert 1 tablespoon to teaspoons.
+            </p>
+
+            <h4>Answer Key</h4>
+            <p>
+                Wash hands / clean utensils<br>
+                Perishable items (milk, meat, eggs)<br>
+                1 cup = 240 mL<br>
+                1 tbsp = 3 tsp
+            </p>
+        `;
+    }
+
+    else if (section === "assessment1") {
+        content.innerHTML = `
+            <h2>Assessment: Industrial Arts & Food Preparation</h2>
+            <p><strong>Type:</strong> Multiple Choice</p>
+            <p><strong>Direction:</strong> Choose the correct answer.</p>
+
+            <p>
+                1. What is the main purpose of Industrial Arts?<br>
+                A. To decorate houses<br>
+                B. To provide practical skills for daily life and work<br>
+                C. To study history<br>
+                D. To prepare food only
+            </p>
+
+            <p>
+                2. Which of the following is an example of an Industrial Arts service?<br>
+                A. Singing<br>
+                B. Painting artworks<br>
+                C. Electrical installation<br>
+                D. Writing stories
+            </p>
+
+            <p>
+                3. Why are codes and standards important in Industrial Arts services?<br>
+                A. To make work slower<br>
+                B. To ensure safety and quality<br>
+                C. To increase price<br>
+                D. To avoid learning skills
+            </p>
+
+            <p>
+                4. Which is a principle of proper food preparation?<br>
+                A. Using dirty utensils<br>
+                B. Ignoring safety rules<br>
+                C. Following correct measurements<br>
+                D. Overcooking food
+            </p>
+
+            <p>
+                5. Which conversion is correct?<br>
+                A. 1 kilogram = 100 grams<br>
+                B. 1 cup = 50 milliliters<br>
+                C. 1 liter = 100 milliliters<br>
+                D. 1 kilogram = 1,000 grams
+            </p>
+
+            <h4>Answer Key</h4>
+            <p>B | C | B | C | D</p>
+        `;
+    }
+
+    else if (section === "assessment2") {
+        content.innerHTML = `
+            <h2>Assessment 2: Industrial Arts & Food Preparation</h2>
+            <p><strong>Type:</strong> Multiple Choice</p>
+            <p><strong>Direction:</strong> Choose the correct answer.</p>
+
+            <p>
+                1. Which of the following is considered a construction service in Industrial Arts?<br>
+                A. Painting artworks<br>
+                B. Building a workshop<br>
+                C. Baking bread<br>
+                D. Writing reports
+            </p>
+
+            <p>
+                2. Which document ensures electrical installations are safe in the Philippines?<br>
+                A. Philippine Building Code<br>
+                B. Philippine Electrical Code<br>
+                C. Traffic Signs Manual<br>
+                D. Philippine Electronics Code
+            </p>
+
+            <p>
+                3. Which Industrial Arts service involves repairing machines or devices?<br>
+                A. Automotive servicing<br>
+                B. Baking<br>
+                C. Painting<br>
+                D. Cooking
+            </p>
+
+            <p>
+                4. Which food preparation principle prevents contamination?<br>
+                A. Washing hands and cleaning surfaces<br>
+                B. Ignoring labels<br>
+                C. Using dirty utensils<br>
+                D. Storing raw and cooked foods together
+            </p>
+
+            <p>
+                5. Convert 1 liter of water to milliliters.<br>
+                A. 100 mL<br>
+                B. 500 mL<br>
+                C. 1000 mL<br>
+                D. 2000 mL
+            </p>
+
+            <h4>Answer Key</h4>
+            <p>B | B | A | A | C</p>
+        `;
+    }
+
+    else if (section === "reference1") {
+        content.innerHTML = `
+            <h2>References</h2>
+            <p style="font-size:22px;"><strong>Where I Gathered My Assessment and Activity Information</strong></p>
+            <p>
+                The activities and assessments were based on the MATATAG Curriculum Guide for
+                Technology and Livelihood Education, classroom discussions, and standard lessons
+                on food preparation and industrial arts.
+            </p>
+        `;
+    }
+
+    else {
+        content.innerHTML = `<h2>Section</h2><p>Content coming soon.</p>`;
+    }
+}
+</script>
+
+</body>
+  </html>
